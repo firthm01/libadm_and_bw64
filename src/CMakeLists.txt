@@ -17,7 +17,6 @@ elseif(APPLE)
     )
 	set_target_properties(bw64_and_adm PROPERTIES
 		MACOSX_BUNDLE TRUE
-		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist
 	)
 endif()
 
