@@ -7,22 +7,25 @@ set(SOURCE_FILES
     )
 
 if(WIN32)
-    add_executable(bw64_and_adm
-        WIN32
-        ${SOURCE_FILES}
-    )
+    # add_executable(bw64_and_adm
+        # WIN32
+        # ${SOURCE_FILES}
+    # )
+	
+	# set_target_properties(bw64_and_adm PROPERTIES
+		# LINK_FLAGS /SUBSYSTEM:CONSOLE
+	# )
+	
 elseif(APPLE)
-    add_executable(bw64_and_adm
+    add_library(bw64_and_adm MODULE 
         ${SOURCE_FILES}
     )
 	set_target_properties(bw64_and_adm PROPERTIES
 		MACOSX_BUNDLE TRUE
+		BUNDLE TRUE
 	)
 endif()
 
-set_target_properties(bw64_and_adm PROPERTIES
-	LINK_FLAGS /SUBSYSTEM:CONSOLE
-)
 
 target_include_directories(bw64_and_adm
     PUBLIC
